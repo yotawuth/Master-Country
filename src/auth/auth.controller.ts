@@ -1,9 +1,9 @@
-import {  Body,Controller,Get,HttpCode,HttpStatus,Param,Post,Query,Request,UseGuards } from '@nestjs/common';
+import {  Controller,Get,HttpCode,HttpStatus,Post,Query,Request,UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
-import { CreateUserDto } from 'src/dto/user.dto';
-import { ApiBearerAuth } from '@nestjs/swagger';
+import { ApiBearerAuth,ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Master Country')
 @ApiBearerAuth()
 @Controller('auth')
 export class AuthController {
@@ -20,7 +20,7 @@ export class AuthController {
   }
 
 
-   // @HttpCode(HttpStatus.OK)
+    @HttpCode(HttpStatus.OK)
   @Post('login')
   login(@Query('username') username: string,@Query('password') password: string)  {
    return this.authService.login(username,password);

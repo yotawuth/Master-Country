@@ -10,7 +10,7 @@ async function bootstrap() {
   .setTitle('Master Country Example')
   .setDescription('Master Country Example API Description')
   .setVersion('1.0')
-  .addTag('Country')
+  .addTag('Master Country')
   .addBearerAuth()
   .build();
 const document = SwaggerModule.createDocument(app, config);

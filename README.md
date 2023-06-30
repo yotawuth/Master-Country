@@ -45,6 +45,14 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Run API on
+
+```bash
+$ http://localhost:3000/api
+```
+
+### JWT Token SignOptions Expires 120 Sec.
+
 ## Test
 
 ```bash
@@ -58,7 +66,6 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-### JWT Token SignOptions Expires 120 Sec.
 
 ## Support
 
