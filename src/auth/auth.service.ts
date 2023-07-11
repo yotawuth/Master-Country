@@ -28,11 +28,12 @@ export class AuthService {
 
       const res = await this.UserModel.find({username:username}).exec(); 
 
-      if(!res){
+      if(res.length==0){
     let createUserDto = new CreateUserDto;
     createUserDto.username = username;
     createUserDto.password = password;   
     createUserDto.contry = country;
+
 
 
     const saltOrRounds = 10;
@@ -69,7 +70,7 @@ export class AuthService {
         }
         else    {
 
-            return {Result:"Can't login please check username and pasword again."};
+            return {Result:"Can't login please check username and password again."};
         }
     }   
 

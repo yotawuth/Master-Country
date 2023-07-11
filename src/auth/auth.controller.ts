@@ -15,7 +15,6 @@ export class AuthController {
   @Post('register')
   resgister(@Query('username') username: string,@Query('password') password: string,
   @Query('repassword') repassword: string,@Query('country') country: string) {   
-
     return this.authService.resgister(username,password,repassword,country);
   }
 
