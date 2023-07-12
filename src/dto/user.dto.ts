@@ -6,7 +6,7 @@ export class CreateUserDto {
     password: string;    
     firstname: string;
     lastname: string; 
-    contry: string;
+    country: string;
 
   }
 

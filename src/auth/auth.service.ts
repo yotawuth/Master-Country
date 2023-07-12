@@ -5,7 +5,6 @@ import { CreateUserDto, InputUserDto } from 'src/dto/user.dto';
 import { UserDocument, Users } from 'src/model/users.model';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
-import { count } from 'console';
 
 
 @Injectable()
@@ -23,16 +22,16 @@ export class AuthService {
   async resgister(username:string,password:string,repassword:string,
    country:string): Promise<any> {
     
-    if(password != repassword)
+    if(password !== repassword)
       return {Result:'Password Not match.'};
 
       const res = await this.UserModel.find({username:username}).exec(); 
 
-      if(res.length==0){
+      if(res.length === 0){
     let createUserDto = new CreateUserDto;
     createUserDto.username = username;
     createUserDto.password = password;   
-    createUserDto.contry = country;
+    createUserDto.country = country;
 
 
 
